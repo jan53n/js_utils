@@ -18,10 +18,10 @@ export default function objectHasPartial(source, target) {
 
         const tV = target[k];
 
-        if (tV === v || typeof v === "undefined") {
-            continue;
-        } else if (typeof v === "object") {
+        if (typeof v == "object") {
             return objectHasPartial(v, tV);
+        } else if (tV == v || typeof v == "undefined") {
+            continue;
         } else {
             return false;
         }
